@@ -1,4 +1,4 @@
 INSERT INTO users_simulation3
-( auth0_sub, name, picture, email)
+( auth0_sub, name, picture)
 VALUES
-($1, $2, $3, $4);
+($1, $2, $3);

@@ -1,0 +1,1 @@
+SELECT * FROM users_simulation3 WHERE id != 1;

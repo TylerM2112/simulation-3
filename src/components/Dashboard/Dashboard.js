@@ -4,7 +4,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { fetchData } from '../../redux/reducer';
 
-class AccountContainer extends Component {
+class Dashboard extends Component {
     constructor() { 
         super();
         this.state = {
@@ -38,10 +38,8 @@ class AccountContainer extends Component {
                 {user &&
                     <Account
                         name={user.name}
-                        email={user.email}
                         picture={user.picture}
                         id={user.auth0_sub}
-                        amount={Math.floor(100 + Math.random() * 100)}
                     />
                 }    
                 {message && <div>{ message }</div>}
@@ -61,6 +59,6 @@ const mapDispatchToProps = {
 }
 
 const connector = connect(mapStateToProps, mapDispatchToProps);
-const connectedAccountContainer = connector(AccountContainer);
-export default connectedAccountContainer;
+const connectedDashboard = connector(Dashboard);
+export default connectedDashboard;
 // export default connect(mapStateToProps)(AccountContainer);

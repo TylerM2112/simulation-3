@@ -21,12 +21,11 @@ module.exports = {
                             picture: userData.picture,
                         };
                         req.session.user = userInfoResponse.data;
-                        res.redirect('/account');
+                        res.redirect('/dashboard');
                     } else {
-                        return req.app.get('db').create_user([userData.sub, userData.email, userData.name, userData.picture]).then(newUsers => {
+                        return req.app.get('db').create_user([userData.sub, userData.name, userData.picture]).then(newUsers => {
                             const user = {
                                 name: newUsers[0].name,
-                                email: newUsers[0].email,
                                 picture: newUsers[0].picture,
                             };
                             req.session.user = user;
